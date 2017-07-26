@@ -13,11 +13,12 @@
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
-<link href="css/theme.css?v=5" rel="stylesheet">
+<link href="css/theme.css?v=7" rel="stylesheet">
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Aldrich" rel="stylesheet"> 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -25,10 +26,27 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<style type="text/css">
+/*
+	TODO: put this in its own file when done[tm]!
+*/
+.allCaps {
+	text-transform: uppercase;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.spaceFont {
+	font-family: 'Aldrich', sans-serif;
+}
+</style>
+
 <!-- Schema.org markup for Google+ -->
 <meta itemprop="name" content="druffusmobil - THE MOBILE PARTY LOUNGE!">
 <meta itemprop="description" content="The mobile hackerspace party lounge by rufus">
-<meta itemprop="image" content="http://www.example.com/image.jpg">
+<meta itemprop="image" content="https://druffusmobil.de/img/druffus_twitter.png">
 
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
@@ -74,7 +92,7 @@
 <!-- /.container -->
 </nav>
 <!-- Intro Header -->
-<header class="intro">
+<header class="intro" id="intro">
 <div class="intro-body">
 	<div class="container">
 		<div class="row">
@@ -95,8 +113,52 @@
 <section id="about">
 <div class="container content-section text-center">
 	<div class="row">
-		<h2>druffusmobil</h2>
+		<h2 class="allCaps">druffusmobil</h2>
 
+		<p class="spaceFont">
+			<span class="allCaps bold">Road</span>, the final frontier,<br>
+			these are the voyages of <span class="allCaps bold">the Druffusmobil</span>.<br>
+			Its continuing mission, to explore strange new Roads.<br>
+			To seek out new life and new civilizations.<br>
+			To boldly go where no car has gone before.
+		</p>
+	</div>
+	<div class="row">
+		<p>
+			<a href="https://twitter.com/druffusmobil" class="twitter-follow-button" data-show-count="false">Follow @druffusmobil</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</p>
+	</div>
+</div>
+</section>
+
+<section id="car">
+<div class="gallery">
+	<ul>
+		<li class="col-md-3">
+		<a target="_blank" href="img/special_bar/feet_view.jpg">
+		<img src="img/special_bar/feet_view_small.jpg" alt="feet view">
+		</a>
+		<li class="col-md-3">
+		<a target="_blank" href="img/special_bar/front_view_small.jpg">
+		<img src="img/special_bar/front_view_small.jpg" alt="front view">
+		</a>
+		<li class="col-md-3">
+		<a target="_blank" href="img/special_bar/back_view.jpg">
+		<img src="img/special_bar/back_view_small.jpg" alt="back view">
+		</a>
+		<li class="col-md-3">
+		<a target="_blank" href="img/special_bar/feet_view2.jpg">
+		<img src="img/special_bar/feet_view2_small.jpg" alt="feet view too">
+		</a>
+	</ul>
+</div>
+</section>
+
+<!-- Social Media Section -->
+<section id="social">
+<div class="container content-section text-center">
+	<div class="row">
+		<h2 class="allCaps">Social Media</h2>
 		<p>
 			<div class="col-md-6">
 				<a class="twitter-timeline" data-height="1024" href="https://twitter.com/druffusmobil">Tweets by druffusmobil</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -106,11 +168,6 @@
 	            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	          
 			</div>
-		</p>
-	</div>
-	<div class="row">
-		<p>
-			<a href="https://twitter.com/druffusmobil" class="twitter-follow-button" data-show-count="false">Follow @druffusmobil</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</p>
 	</div>
 </div>
@@ -238,5 +295,19 @@
 <script src="js/jquery.easing.min.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/theme.js"></script>
+
+<script type="text/javascript">
+/*
+	TODO: put this in its own file when done[tm]!
+*/
+
+$( document ).ready(function() {
+    var bgImages = ["happy_feet.jpg", "drufus2.jpg", "frontal.jpg"];
+    var bgSelected = bgImages[Math.floor(Math.random()*bgImages.length)];
+    //background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,0.46),rgba(0,0,0,0.88)),url('/img/drufus2.jpg');
+    document.getElementById("intro").style.backgroundImage = "radial-gradient(circle at 50% 50%,rgba(0,0,0,0.46),rgba(0,0,0,0.88)),url('img/header/" + bgSelected + "')";
+});
+</script>
+
 </body>
 </html>
